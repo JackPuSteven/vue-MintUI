@@ -14,8 +14,10 @@
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <!-- <span class="mui-icon mui-icon-home"></span> -->
-        <img src="../../images/menu1.png" alt>
-        <div class="mui-media-body">新闻资讯</div>
+        <router-link to="/home/newslist">
+          <img src="../../images/menu1.png" alt>
+          <div class="mui-media-body">新闻资讯</div>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <!-- <span class="mui-icon mui-icon-email"> -->
@@ -26,6 +28,7 @@
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <!-- <span class="mui-icon mui-icon-chatbubble"></span> -->
+
         <img src="../../images/menu3.png" alt>
 
         <div class="mui-media-body">商品购买</div>
@@ -50,7 +53,7 @@
       </li>
     </ul>
 
-    <h3>HomeContainer</h3>
+    <!-- <h3>HomeContainer</h3> -->
   </div>
 </template>
 

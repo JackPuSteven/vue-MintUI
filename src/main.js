@@ -11,6 +11,18 @@ import VueResource from 'vue-resource'
 // 2.2 安装vue-resource
 Vue.use(VueResource)
 
+// 时间过滤...不想自己写，找现成的 ==>  moment 包，需要安装一下
+// 导入格式化时间的插件
+import moment from "moment"
+
+// 请求目录的根路径
+// Vue.http.options.root = 'http://www.liulongbin.top:3005/'
+
+// 定义全局的过滤器
+Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
+    return moment(dataStr).format(pattern)
+})
+
 
 // 按需导入Mint-UI 中的组件
 import MintUI from 'mint-ui'
@@ -35,5 +47,5 @@ import router from './router.js'
 var vm = new Vue({
     el: "#app",
     render: c => c(app),
-    router,  //1.4挂载路由对象 到vm实例上
+    router, //1.4挂载路由对象 到vm实例上
 })
