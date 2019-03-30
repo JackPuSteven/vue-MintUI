@@ -1,13 +1,7 @@
 <template>
   <div>
     <!-- 轮播图区域 -->
-    <mt-swipe :auto="4000">
-      <!-- 在组件中使用v-for循环的时候必须说过 key -->
-      <mt-swipe-item v-for="item in lunbotuList" :key="item.url">
-        <!-- 想让图片当做表表达式计算，v-bind : -->
-        <img :src="item.img">
-      </mt-swipe-item>
-    </mt-swipe>
+    <swiper :lunbotuList="lunbotuList" :isfull="true"></swiper>
 
     <!-- 9宫格 到 6宫格的改造工程 -->
 
@@ -21,17 +15,20 @@
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <!-- <span class="mui-icon mui-icon-email"> -->
-        <img src="../../images/menu2.png" alt>
+        <router-link to="/home/photolist">
+          <img src="../../images/menu2.png" alt>
 
-        <!-- <span class="mui-badge">0</span> -->
-        <div class="mui-media-body">图片分享</div>
+          <!-- <span class="mui-badge">0</span> -->
+          <div class="mui-media-body">图片分享</div>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <!-- <span class="mui-icon mui-icon-chatbubble"></span> -->
+        <router-link to="/home/goodslist">
+          <img src="../../images/menu3.png" alt>
 
-        <img src="../../images/menu3.png" alt>
-
-        <div class="mui-media-body">商品购买</div>
+          <div class="mui-media-body">商品购买</div>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <!-- <span class="mui-icon mui-icon-location"></span> -->
@@ -59,6 +56,8 @@
 
 <script>
 import { Toast } from "mint-ui";
+import swiper from "../subcomponents/Swiper.vue";
+
 export default {
   data() {
     return {
@@ -85,37 +84,16 @@ export default {
   },
   created() {
     this.getLunbotu();
+  },
+  components: {
+    swiper
   }
 };
 </script>
 
 
 <style lang="scss" scoped>
-.mint-swipe {
-  height: 300px;
-}
-
 // 在sass中这样写
-// 轮播的CSS
-.mint-swipe-item {
-  &:nth-child(1) {
-    background-color: white;
-    height: 60%;
-  }
-  &:nth-child(2) {
-    background-color: white;
-    height: 60%;
-  }
-  &:nth-child(2) {
-    background-color: white;
-    height: 60%;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
 
 // 六宫格的css  ul
 .mui-grid-view.mui-grid-9 {

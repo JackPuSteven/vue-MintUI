@@ -17,6 +17,12 @@ import moment from "moment"
 
 // 请求目录的根路径
 // Vue.http.options.root = 'http://www.liulongbin.top:3005/'
+// 全局设置 post 时候，表单数据格式组织的形式
+
+
+
+
+Vue.http.options.emulateJSON = true;
 
 // 定义全局的过滤器
 Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
@@ -39,6 +45,11 @@ import app from './App.vue'
 
 // 1.3 导入自己的 router.js 路由模块
 import router from './router.js'
+
+
+//  安装图片预览插件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 
 
