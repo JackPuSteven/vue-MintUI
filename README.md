@@ -132,7 +132,16 @@ mui('.mui-scroll-wrapper').scroll({
 ## 绘制 商品列表 页面基本结构并美化
 
 ## 尝试在手机上 进行项目的开发和预览和测试
+
 1. 要保证手机正常运行；
-2. 保证手机和电脑 处于同一 WIFI环境中，也就是说，手机可以访问到电脑的IP
-3. 打开自己的项目中， package.json 文件 在dev脚本中添加一个 --host  指令，把当前电脑的主机IP的WIFI ip地址设置为 --host 的指令值；
-+ 如何查看自己电脑所处的 WIFI 的IP 呢？ cmd 终端  ipconfig 查看无线网的IP地址 --host 172.23.232.1 (Total Control)
+2. 保证手机和电脑 处于同一 WIFI 环境中，也就是说，手机可以访问到电脑的 IP
+3. 打开自己的项目中， package.json 文件 在 dev 脚本中添加一个 --host 指令，把当前电脑的主机 IP 的 WIFI ip 地址设置为 --host 的指令值；
+
+- 如何查看自己电脑所处的 WIFI 的 IP 呢？ cmd 终端 ipconfig 查看无线网的 IP 地址 --host 172.23.232.1 (Total Control)
+
+## 概念： Vuex 是 Vue 配套的 公共数据管理工具，它可以把一些共享 的数据，保存到 vuex 中， 方便整个程序中的任何组件直接获取或修改我们的公共数据
+
+```
+const store = new Vuex.store()
+const router = new express.Router()
+```
