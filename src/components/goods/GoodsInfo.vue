@@ -121,6 +121,17 @@ export default {
     addToShopCar() {
       // 添加到购物车
       this.ballFlag = !this.ballFlag;
+      // {id:商品的id, count: 要购买的数量, price: 商品的单价, selected:true(开关是否打开)}
+      var goodsinfo = {
+        //拼接出一个 要保存到 store 中 car 数组里的 商品信息对象
+        id: this.id,
+        count: this.selectedCount,
+        price: this.goodsinfo.sell_price,
+        selected: true
+      };
+
+      // 调用 store 中 的 mutations  来保存商品加入到购物车中
+      this.$store.commit("addToCar", goodsinfo);
     },
 
     beforeEnter(el) {
